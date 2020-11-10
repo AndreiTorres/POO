@@ -2,22 +2,29 @@ public class Device {
     private int Id;
     private boolean Status;
     private String Name;
-    //private Brand brand ;
     private DeviceSpecs deviceSpecs;
-
+    
     public Device() {
         this.Id = 0;
         this.Status = false;
         this.Name = null;
-        this.brand = null;
+        
     }
 
-    public Device(int Id, boolean Status, String Name, Brand brand) {
+    public Device(int Id, boolean Status, String Name, DeviceSpecs deviceSpecs) {
         this.Id = Id;
         this.Status = Status;
         this.Name = Name;
-        this.brand = brand;
+        this.deviceSpecs = deviceSpecs;
     }
+    public DeviceSpecs getdeviceSpecs(){
+        return deviceSpecs;
+    }
+
+    public void setdeviceSpecs(DeviceSpecs deviceSpecs){
+        this.deviceSpecs = deviceSpecs;
+    }
+
 
     public int getId() {
         return Id;
@@ -29,10 +36,6 @@ public class Device {
 
     public String getName(){
         return Name;
-    }
-
-    public Brand getBrand() {
-        return brand;
     }
     
     public void setId(int id){
@@ -47,23 +50,25 @@ public class Device {
         this.Name = Name;
     }
     
-    public void setBrand(Brand brand){
-        this.brand = brand;
-    }
+
     public String toString(){
         String output;
         output = "ID: " + this.Id +"\n" +
                 "Status: " + this.Status + "\n"+
                 "Name: " + this.Name + "\n" +
-                "Brand: " + this.brand.getBrandName()+ "\n";
+                //"Device specs: \n" + this.deviceSpecs.toString();
+                //"Brand: " + deviceSpecs.getBrand() + "\n"+
+                //"Model: " + deviceSpecs.getModel() + "\n"+
+                //"Wifi: " + deviceSpecs.getWifiBuiltIn() + "\n"+
+                //"Bluetooth: " + deviceSpecs.getBluetoothwifiBuiltIn() + "\n";
+                "Braaaaand: " + this.deviceSpecs.getBrand() + "\n"+
+                "Brand: " + deviceSpecs.getBrand() + "\n"+
+                "Model: " + this.deviceSpecs.getModel() + "\n"+
+                "Wifi: " + this.deviceSpecs.getWifiBuiltIn() + "\n"+
+                "Bluetooth: " + this.deviceSpecs.getBluetoothwifiBuiltIn() + "\n";
+
+               
         return output;
     }
-    public static void main(String[] args) {
-        Brand brand = Brand.LG;
-        Device device = new Device(0, true, "AC", brand);
-        
-        System.out.println(device);
-        
-    }
-
+  
 }    

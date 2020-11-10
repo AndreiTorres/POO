@@ -1,11 +1,16 @@
 public class Main{
 
     public static void main(String[] args) {
-    Inventory inventory = new Inventory();
+        
+        //Inventory inventario = new Inventory();
+        //inventario.createInventory();
+        //inventario.getDevice(3);
 
-    inventory.createInventory();
-    Device device = new Device(0, true, "AC", brand);
-    inventory.search (device);
-    
+        //DeviceSpecs spec1 = new DeviceSpecs(Brand.LG , "123", true, false);
+        //DeviceSpecs spec1 = new DeviceSpecs(Brand.LG , "123", true, false);
+        Device prueba = new Device(4, true, "AG", new DeviceSpecs(Brand.LG , "123", true, false));
+        System.out.println(prueba.toString());
+        //System.out.println(prueba.getdeviceSpecs());
+        //System.out.println(prueba.deviceSpecs.toString());//:v
     }
 }
